@@ -36,7 +36,7 @@ st.caption('Untuk kalangan anak muda sampai tua')
 # Data berdasarkan Pendidikan Tertinggi Yang Ditamatkan dan Tahunnya
 data = {
      "Item Purchased": ["Blouse", "Sweater", "Jeans", "Sandals", "Sneakers", "Shirt", "Coat", "Handbag"],
-     "Category Clothing": ["Blouse", "Sweater", "Jeans", "Shirt", "Short", "Dress", "Dress", "Pants"],
+     "Category Clothing": ["Blouse", "Sweater", "Jeans", "Shirt", "Short", "Dress", "Skirt", "Pants"],
      "Category Footwear": ["Sandals", "Sneakers", "Boots", "Shoes", "Flat Shoes", "Ballet Flats", "Galoshes", "Oxfords"],
      "Category Accessories": ["Handbag", "Sunglasses", "Jewelry", "Scarf", "Hat", "Backpack", "Belt", "Gloves"],
      "Purchase Amount (USD)": [53, 64, 73, 90, 49, 20, 85, 34],
