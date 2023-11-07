@@ -18,7 +18,7 @@ st.sidebar.markdown(
 
 # Judul pada page Data
 st.markdown(
-    '<div style="font-size: 40px; font-family: timesnewroman; margin-bottom: 50px;">Rice Production indonesia</div>',
+    '<div style="font-size: 40px; font-family: timesnewroman; margin-bottom: 50px;">Rice Production Indonesia</div>',
     unsafe_allow_html=True
 )
 
