@@ -1,9 +1,11 @@
+from streamlit_lottie import st_lottie
 import streamlit as st
+import json
 
 # Menambahkan title dan icon pada page
 st.set_page_config(
     page_title="Contact",
-    page_icon="🐼"
+    page_icon="☎️"
 )
 # Menambahkan gambar di sidebar
 st.sidebar.markdown(
@@ -33,6 +35,29 @@ st.markdown(
         '</div>',
         unsafe_allow_html=True
     )
+
+# Menambahkan animasi
+def load_lottiefile(filepath: str):
+    with open(filepath, "r") as f:
+        return json.load(f)
+    
+lottie_aku = load_lottiefile ("lottie/info.json")
+st.sidebar.markdown(
+    '<div style="margin-top: 40%;"></div>',
+    unsafe_allow_html=True
+)
+with st.sidebar:
+    st_lottie(
+        lottie_aku,
+        speed= 1,
+        reverse= False,
+        loop= True,
+        quality= "high",
+        height= None,
+        width= None,
+        key= None,
+    )
+
 
 def main():
     # Membuat cover pada menu Contact
