@@ -2,7 +2,6 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 import streamlit as st
 import pandas as pd
-import altair as alt
 
 # Menambahkan title dan icon pada page
 st.set_page_config(
@@ -43,7 +42,7 @@ data = {
 
 
 # Menambahkan tabs
-lingkaran, altair, tabel = st.tabs(["GRAFIK LINGKARAN", "GRAFIK ALTAIR", "TABEL"])
+lingkaran, batang, tabel = st.tabs(["GRAFIK LINGKARAN", "GRAFIK BATANG", "TABEL"])
 
 colors = ['#ff9999','#66b3ff','#99ff99','#ffcc99','#c2c2f0','#ffb3e6', '#c2f0c2', '#ff6666']
 
@@ -64,14 +63,11 @@ with lingkaran:
     # Menampilkan grafik
     st.pyplot(fig1)
 
-with altair:
-    alt.Chart(data)
-    .encode(
-        x=f"Category {category}",
-        y=alt.Y(f"Penjualan rata2 per volume(juta) {category}", stack=None),
-        color="colors",
-    )
-     st.altair_chart(chart, use_container_width=True)
+with batang:
+    fig = px.bar(data, x=f"Penjualan rata2 per volume(juta) {category}", y=f"Category {category}", color=colors, text=f"Author {category}")
+    fig.update_layout(showlegend=False)
+    fig.update_traces(texttemplate='%{text}', textposition='inside', insidetextfont_color='black')
+    st.plotly_chart(fig)
 
 with tabel:
     df = pd.DataFrame(data)
