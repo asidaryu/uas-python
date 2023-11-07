@@ -31,7 +31,7 @@ st.markdown(
     '<div style="font-size: 40px; font-family: timesnewroman; margin-bottom: 50px;">Shopping Trends</div>',
     unsafe_allow_html=True
 )
-st.write('Gender: Male')
+st.caption('Untuk kalangan anak muda sampai tua')
 
 # Data berdasarkan Pendidikan Tertinggi Yang Ditamatkan dan Tahunnya
 data = {
