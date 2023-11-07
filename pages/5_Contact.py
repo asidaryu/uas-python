@@ -41,7 +41,7 @@ def load_lottiefile(filepath: str):
     with open(filepath, "r") as f:
         return json.load(f)
     
-lottie_aku = load_lottiefile ("lottie/info.json")
+lottie_aku = load_lottiefile (".devcontainer/info.json")
 st.sidebar.markdown(
     '<div style="margin-top: 40%;"></div>',
     unsafe_allow_html=True
