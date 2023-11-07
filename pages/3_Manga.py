@@ -36,8 +36,8 @@ data = {
      "Author Shogakukan": ["Fujiko", "Rumiko Takahashi", "Hiroyuki Nishimori", "Hidenori Kusaka", "Nobuyuki Anzai", "Naoki Urasawa", "Makoto Raiku", "Takao Saito"],
      "Author Kodansha": ["Hajime Isayama", "George Morikawa", "Takehiko Inoue", "Hiro Mashima", "Ken Wakui", "Shuichi Shigeno", "Go Nagai", "Tsukasa Oshima"],
      "Penjualan rata2 per volume(juta) Shueisha" : [4.97, 6.19, 3.47, 5.48, 0.83, 6.52, 1.75, 0.92],
-     "Penjualan rata2 per volume(juta) Shogakukan" : [1.11, 3.85, 1.42, 0.83, 1.91, 0.59, 2.29, 2.33],
-     "Penjualan rata2 per volume(juta) Kodansha" : [2.33, 2.21, 2.96, 1.33, 4.1, 0.96, 1.14, 2.57],
+     "Penjualan rata2 per volume(juta) Shogakukan" : [4.71, 0.89, 1.05, 0.47, 0.75, 1.11, 0.72, 1.45],
+     "Penjualan rata2 per volume(juta) Kodansha" : [3.23, 0.74, 2.21, 1.14, 2.26, 1.16, 10, 1.51],
 }
 
 
