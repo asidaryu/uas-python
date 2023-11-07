@@ -18,7 +18,7 @@ st.sidebar.markdown(
 
 # Judul pada page Data
 st.markdown(
-    '<div style="font-size: 40px; font-family: timesnewroman; margin-bottom: 50px;">Rice Production Indonesia</div>',
+    '<div style="font-size: 40px; font-family: timesnewroman; margin-bottom: 50px;">Rice Production indonesia</div>',
     unsafe_allow_html=True
 )
 
@@ -30,10 +30,12 @@ year = st.sidebar.radio(
 
 # Data berdasarkan Rice Production Indonesia Tahu 2020-2022
 data = {
-    "Provinsi": ["Aceh", "Riau", "Jambi", "Bengkulu", "Lampung", "Banten", "Bali", "Jawa Tengah"],
-    "Productivity (kw/ha) Tahun 2020": [55.28, 37.64, 45.58, 45.66, 48.62, 50.88, 58.49, 56.93],
-    "Productivity (kw/ha) Tahun 2021": [55.03, 40.98, 46.29, 48.67,  50.77, 50.38, 58.83, 56.69],
-    "Productivity (kw/ha) Tahun 2022": [55.55, 41.83, 45.88, 49.27, 51.87, 53.04, 60.59, 55.41],
+    "Provinsi Tahun 2020": ["Aceh", "Sumatera Utara", "Sumatera Barat", "Riau", "Jambi", "Sumatera Selatan", "Bengkulu", "Lampung"],
+    "Provinsi Tahun 2021": ["Bangka Belitung", "Riau", "DKI Jakarta", "Jawa Barat", "Jawa Tengah", "Yogyakarta", "Jawa Timur", "Banten"],
+    "Provinsi Tahun 2022": ["Bali", "Gorontalo", "Sulawesi Barat", "Maluku", "Maluku Utara", "Papua Barat", "Papua", "Sulawesi Utara"],
+    "Productivity (kw/ha) Tahun 2020": [55.28, 52.51, 46.92, 37.64, 45.58, 49.75, 45.66, 48.62],
+    "Productivity (kw/ha) Tahun 2021": [38.57, 31.65, 58.03, 56.81, 56.69, 51.77, 56.02, 50.38],
+    "Productivity (kw/ha) Tahun 2022": [60.59, 51.29, 50.99, 38.6, 38.16, 43.89, 38.99, 41.88],
 }
 # Menambahkan tabs
 lingkaran, batang, tabel = st.tabs(["GRAFIK LINGKARAN", "GRAFIK BATANG", "TABEL"])
@@ -43,7 +45,7 @@ colors = ['#ff9999','#66b3ff','#99ff99','#ffcc99','#c2c2f0','#ffb3e6', '#c2f0c2'
 
 with lingkaran:
     # Data
-    labels = data["Provinsi"]
+    labels = data[f"Provinsi Tahun {year}"]
     sizes = data[f"Productivity (kw/ha) Tahun {year}"]
 
     # Explode untuk bagian yang ditekankan
@@ -59,7 +61,7 @@ with lingkaran:
     st.pyplot(fig1)
 
 with batang:
-    fig = px.bar(data, x="Provinsi", y=f"Productivity (kw/ha) Tahun {year}", color= colors)
+    fig = px.bar(data, x=f"Provinsi Tahun {year}", y=f"Productivity (kw/ha) Tahun {year}", color= colors)
     fig.update_layout(showlegend=False)
     st.plotly_chart(fig)
 
@@ -69,5 +71,5 @@ with tabel:
         '<div style="margin-top: 20px;"></div>',
         unsafe_allow_html=True
     )
-    filtered_df = df[["Provinsi", f"Productivity (kw/ha) Tahun {year}"]]  
+    filtered_df = df[[f"Provinsi Tahun {year}", f"Productivity (kw/ha) Tahun {year}"]]  
     st.write(filtered_df)
