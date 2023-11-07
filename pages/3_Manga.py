@@ -25,7 +25,7 @@ st.markdown(
     '<div style="font-size: 40px; font-family: timesnewroman; margin-bottom: 50px;">Best Selling Manga</div>',
     unsafe_allow_html=True
 )
-st.write('Demographic : Shonen')
+st.caption('Demographic : Shonen')
 
 # Data berdasarkan Pendidikan Tertinggi Yang Ditamatkan dan Tahunnya
 data = {
@@ -33,10 +33,10 @@ data = {
      "Category Shueisha": ["One Piece", "Goigo 13", "Detective Conan", "Dragon Ball", "Slam Dunk", "Tokyo Revenger", "Demon Slayer", "Bleach"],
      "Category Shogakukan": ["Doraemon", "Oishimbo", "Touch", "Major", "H2", "inuyasha", "Sailormoon", "Kyo Kara Ore Wa"],
      "Category Kodansha": ["Attack On Titan", "Hajime No Ipo", "The Kin Daici", "Sazae-San", "Fagabon", "Fairytile", "Initial D", "Devilmen"],
-     "Average sales per volume in million(s)" : [4.97, 1.45, 2.65, 6.19, 4.71, 3.47, 5.48, 0.78],
-     "Average sales per volume in million(s) Shueisha" : [6.54, 1.22, 1.75, 0.92, 3.23, 4.35, 3.7, 0.74],
-     "Average sales per volume in million(s) Shogakukan" : [1.11, 3.85, 1.42, 0.83, 1.91, 0.59, 2.29, 2.33],
-     "Average sales per volume in million(s) Kodansha" : [2.33, 2.21, 2.96, 1.33, 4.1, 0.96, 1.14, 2.57],
+     "Penjualan rata2 per volume(juta)" : [4.97, 1.45, 2.65, 6.19, 4.71, 3.47, 5.48, 0.78],
+     "Penjualan rata2 per volume(juta) Shueisha" : [6.54, 1.22, 1.75, 0.92, 3.23, 4.35, 3.7, 0.74],
+     "Penjualan rata2 per volume(juta) Shogakukan" : [1.11, 3.85, 1.42, 0.83, 1.91, 0.59, 2.29, 2.33],
+     "Penjualan rata2 per volume(juta) Kodansha" : [2.33, 2.21, 2.96, 1.33, 4.1, 0.96, 1.14, 2.57],
 }
 
 
@@ -48,7 +48,7 @@ colors = ['#ff9999','#66b3ff','#99ff99','#ffcc99','#c2c2f0','#ffb3e6', '#c2f0c2'
 with lingkaran:
     # Data
     labels = data[f"Category {category}"]
-    sizes = data[f"Average sales per volume in million(s) {category}"] 
+    sizes = data[f"Penjualan rata2 per volume(juta) {category}"] 
 
     # Explode untuk bagian yang ditekankan
     explode = (0, 0, 0, 0, 0.1, 0, 0.1, 0.2)
@@ -63,7 +63,7 @@ with lingkaran:
     st.pyplot(fig1)
 
 with batang:
-    fig = px.bar(data, x=f"Category {category}", y= f"Average sales per volume in million(s) {category}", color=colors)
+    fig = px.bar(data, x=f"Category {category}", y= f"Penjualan rata2 per volume(juta) {category}", color=colors)
     fig.update_layout(showlegend=False)
     st.plotly_chart(fig)
 
@@ -73,5 +73,5 @@ with tabel:
         '<div style="margin-top: 20px;"></div>',
         unsafe_allow_html=True
     )
-    filtered_df = df[[f"Category {category}", f"Average sales per volume in million(s) {category}"]]
+    filtered_df = df[[f"Category {category}", f"Penjualan rata2 per volume(juta) {category}"]]
     st.write(filtered_df)
