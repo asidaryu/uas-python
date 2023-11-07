@@ -68,7 +68,7 @@ def main():
         )
         st.markdown(
             '<div style="font-size: 20px; font-family: timesnewroman; color: cyan; margin-top: 25px; margin-left: 50px;">Email</div>'
-            '<div style="font-size: 15px; font-family: timesnewroman; margin-left: 50px;">pengangguran_163@gmail.com</div>',
+            '<div style="font-size: 15px; font-family: timesnewroman; margin-left: 50px;">kelompok-tya_163@gmail.com</div>',
             unsafe_allow_html=True
         )
 
