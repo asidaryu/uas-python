@@ -29,11 +29,12 @@ st.caption('Demographic : Shonen')
 
 # Data berdasarkan Pendidikan Tertinggi Yang Ditamatkan dan Tahunnya
 data = {
-     "Manga": ["Slime", "Hunter x Hunter", "Dr Stone", "Naruto", "One Piece", "Dragon Ball", "Doraemon", "Dora"],
-     "Category Shueisha": ["One Piece", "Goigo 13", "Detective Conan", "Dragon Ball", "Slam Dunk", "Tokyo Revenger", "Demon Slayer", "Bleach"],
-     "Category Shogakukan": ["Doraemon", "Oishimbo", "Touch", "Major", "H2", "inuyasha", "Sailormoon", "Kyo Kara Ore Wa"],
-     "Category Kodansha": ["Attack On Titan", "Hajime No Ipo", "The Kin Daici", "Sazae-San", "Fagabon", "Fairytile", "Initial D", "Devilmen"],
-     "Penjualan rata2 per volume(juta)" : [4.97, 1.45, 2.65, 6.19, 4.71, 3.47, 5.48, 0.78],
+     "Category Shueisha": ["One Piece", "Dragon Ball", "Naruto", "Slam Dunk", "Captain Tsubasa", "Kimetsu no Yaiba", "Bleach", "JoJo's Bizare"],
+     "Category Shogakukan": ["Doraemon", "Inuyasha", "Kyo Kara Ore Wa", "Pokemon", "Flame of Recca", "Monster", "Zatch Bell", "Golgo 13"],
+     "Category Kodansha": ["Attack on Titan", "Hajime no Ipo", "Vagabond", "Fairy Tail", "Tokyo Revengers", "Initial D", "Devilman", "Shoot!"],
+     "Author Shueisha": ["Eiichiro Oda", "Akira Toriyama", "Masashi Kishimoto", "Takehiko Inoue", "Yoichi Takahashi", "Koyoharu Gotouge", "Tite Kubo", "Hirohiko Araki"],
+     "Author Shogakukan": ["Fujiko", "Rumiko Takahashi", "Hiroyuki Nishimori", "Hidenori Kusaka", "Nobuyuki Anzai", "Naoki Urasawa", "Makoto Raiku", "Takao Saito"],
+     "Author Kodansha": ["Hajime Isayama", "George Morikawa", "Takehiko Inoue", "Hiro Mashima", "Ken Wakui", "Shuichi Shigeno", "Go Nagai", "Tsukasa Oshima"],
      "Penjualan rata2 per volume(juta) Shueisha" : [6.54, 1.22, 1.75, 0.92, 3.23, 4.35, 3.7, 0.74],
      "Penjualan rata2 per volume(juta) Shogakukan" : [1.11, 3.85, 1.42, 0.83, 1.91, 0.59, 2.29, 2.33],
      "Penjualan rata2 per volume(juta) Kodansha" : [2.33, 2.21, 2.96, 1.33, 4.1, 0.96, 1.14, 2.57],
@@ -73,5 +74,5 @@ with tabel:
         '<div style="margin-top: 20px;"></div>',
         unsafe_allow_html=True
     )
-    filtered_df = df[[f"Category {category}", f"Penjualan rata2 per volume(juta) {category}"]]
+    filtered_df = df[[f"Category {category}", f"Author {category}", f"Penjualan rata2 per volume(juta) {category}"]]
     st.write(filtered_df)
