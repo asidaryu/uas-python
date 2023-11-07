@@ -64,6 +64,7 @@ with lingkaran:
 
 with batang:
     fig = px.bar(data, x=f"Category {category}", y= f"Average sales per volume in million(s) {category}", color=colors)
+    fig.update_layout(showlegend=False)
     st.plotly_chart(fig)
 
 with tabel:
