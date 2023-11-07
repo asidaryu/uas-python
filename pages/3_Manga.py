@@ -66,7 +66,6 @@ with lingkaran:
 
 with altair:
     alt.Chart(data)
-    .mark_area(opacity=0.3)
     .encode(
         x=f"Category {category}",
         y=alt.Y(f"Penjualan rata2 per volume(juta) {category}", stack=None),
