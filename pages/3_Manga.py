@@ -65,15 +65,13 @@ with lingkaran:
     st.pyplot(fig1)
 
 with altair:
-    chart = (
-                alt.Chart(data)
-                .mark_area(opacity=0.3)
-                .encode(
-                    x=f"Category {category}",
-                    y=alt.Y(f"Penjualan rata2 per volume(juta) {category}", stack=None),
-                    color="colors",
-                )
-            )
+    alt.Chart(data)
+    .mark_area(opacity=0.3)
+    .encode(
+        x=f"Category {category}",
+        y=alt.Y(f"Penjualan rata2 per volume(juta) {category}", stack=None),
+        color="colors",
+    )
      st.altair_chart(chart, use_container_width=True)
 
 with tabel:
