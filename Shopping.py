@@ -5,7 +5,7 @@ import pandas as pd
 
 # Menambahkan title dan icon pada page
 st.set_page_config(
-    page_title="Shopping",
+    page_title="Shopping Trends",
     page_icon="🛍️"
 )
 
@@ -35,15 +35,13 @@ st.caption('Untuk kalangan anak muda sampai tua')
 
 # Data berdasarkan Pendidikan Tertinggi Yang Ditamatkan dan Tahunnya
 data = {
-     "Item Purchased": ["Blouse", "Sweater", "Jeans", "Sandals", "Sneakers", "Shirt", "Coat", "Handbag"],
      "Category Clothing": ["Blouse", "Sweater", "Jeans", "Shirt", "Short", "Dress", "Skirt", "Pants"],
      "Category Footwear": ["Sandals", "Sneakers", "Boots", "Shoes", "Flat Shoes", "Ballet Flats", "Galoshes", "Oxfords"],
      "Category Accessories": ["Handbag", "Sunglasses", "Jewelry", "Scarf", "Hat", "Backpack", "Belt", "Gloves"],
-     "Purchase Amount (USD)": [53, 64, 73, 90, 49, 20, 85, 34],
-     "Purchase Amount (USD) Size S": [73, 36, 45, 21, 94, 43, 32, 73],
-     "Purchase Amount (USD) Size M": [90, 81, 69, 94, 36, 91, 95, 92],
-     "Purchase Amount (USD) Size L": [53, 53, 43, 79, 46, 53, 41, 100],
-     "Purchase Amount (USD) Size XL": [38, 21, 59, 73, 72, 83, 67, 40],
+     "Jumlah Pembelian (USD) Size S": [73, 36, 45, 21, 94, 43, 32, 73],
+     "Jumlah Pembelian (USD) Size M": [90, 81, 69, 94, 36, 91, 95, 92],
+     "Jumlah Pembelian (USD) Size L": [53, 53, 43, 79, 46, 53, 41, 100],
+     "Jumlah Pembelian (USD) Size XL": [38, 21, 59, 73, 72, 83, 67, 40],
 }
 # Menambahkan tabs
 lingkaran, batang, tabel = st.tabs(["GRAFIK LINGKARAN", "GRAFIK BATANG", "TABEL"])
@@ -53,7 +51,7 @@ colors = ['#ff9999','#66b3ff','#99ff99','#ffcc99','#c2c2f0','#ffb3e6', '#c2f0c2'
 with lingkaran:
     # Data
     labels = data[f"Category {category}"]
-    sizes = data[f"Purchase Amount (USD) Size {size}"]
+    sizes = data[f"Jumlah Pembelian (USD) Size {size}"]
 
     # Explode untuk bagian yang ditekankan
     explode = (0, 0, 0, 0, 0.1, 0, 0.1, 0.2)
@@ -68,7 +66,7 @@ with lingkaran:
     st.pyplot(fig1)
 
 with batang:
-    fig = px.bar(data, x=f"Category {category}", y=f"Purchase Amount (USD) Size {size}", color=colors)
+    fig = px.bar(data, x=f"Category {category}", y=f"Jumlah Pembelian (USD) Size {size}", color=colors)
     fig.update_layout(showlegend=False)
     st.plotly_chart(fig)
 
@@ -78,5 +76,5 @@ with tabel:
         '<div style="margin-top: 20px;"></div>',
         unsafe_allow_html=True
     )
-    filtered_df = df[[f"Category {category}", f"Purchase Amount (USD) Size {size}"]]
+    filtered_df = df[[f"Category {category}", f"Jumlah Pembelian (USD) Size {size}"]]
     st.write(filtered_df)
