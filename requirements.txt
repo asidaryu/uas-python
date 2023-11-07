@@ -5,3 +5,4 @@ pydeck
 streamlit
 matplotlib
 plotly
+streamlit_lottie
