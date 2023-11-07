@@ -5,7 +5,7 @@ import pandas as pd
 
 # Menambahkan title dan icon pada page
 st.set_page_config(
-    page_title="Shopping Trends",
+    page_title="Shopping",
     page_icon="🛍️"
 )
 
